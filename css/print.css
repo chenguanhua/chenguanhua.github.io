@@ -28,14 +28,6 @@ h5{
 	font-style:italic;
 }
 
-nav {
-  display: none;
-}
-
-footer{
-	display:none;
-}
-
 a[href^="http://"] {
   display: inline;
   text-decoration:none;
@@ -52,6 +44,10 @@ header{
 header h1{
 	font-weight:bold;
 	font-size:2.5em;
+}
+
+nav {
+  display: none;
 }
 
 main{
@@ -159,4 +155,8 @@ li.basic:after {
 
 #awards p{
 	font-style:italic;
+}
+
+footer{
+	display:none;
 }
