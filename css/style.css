@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Leckerli+One);
+@import url(https://fonts.googleapis.com/css?family=Source+Serif+Pro);
 
 *{
 	margin:0;
@@ -11,6 +12,7 @@ body{
 }
 
 h1, h2, h3, h4, h5, h6 {
+	font-family:'sans-serif','Source Serif Pro';
     font-weight: normal;
 }
 
@@ -44,6 +46,10 @@ h4{
 h5{
 	font-size:1em;
 	font-style:italic;
+}
+
+p{
+	font-family:'sans-serif','Source Serif Pro';
 }
 
 header{

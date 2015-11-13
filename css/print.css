@@ -1,4 +1,5 @@
 * {
+  font-family:'sans-serif';
   color: black;
   background: transparent;
   margin:0;
@@ -11,7 +12,7 @@
 }
 
 h1 {
-  font-size: 150%;
+  font-size: 125%;
   margin:4% auto;
 }
 
@@ -24,7 +25,12 @@ h3 {
   font-size: 100%;
 }
 
+h4{
+	font-weight:normal;
+}
+
 h5{
+	font-weight:normal;
 	font-style:italic;
 }
 
@@ -55,7 +61,7 @@ main{
 }
 
 section{
-	border-top: 3px double gray;
+	border-top: 3pt double gray;
 	margin:10% auto;
 	text-align:center;
 }
@@ -67,7 +73,7 @@ section ul{
 }
 
 section li{
-	margin: 0 0 20px 0;
+	margin: 0 0 20pt 0;
     clear: both;
 }
 
@@ -78,7 +84,7 @@ section li div{
 section .details{
 	float:left;
 	width:40%;
-	padding-bottom:25px;
+	padding-bottom:25pt;
 }
 
 section li p{
@@ -98,12 +104,12 @@ section li p{
 
 #skills-ul li {
     position: relative;
-    border-width: 3px;
+    border-width: 3pt;
     border-style: none outset outset none;
-    font: bold 9px/20px sans-serif;
-    letter-spacing: 1px;
-    margin-bottom: 3px;
-    padding: 3px 3px 0;
+    font: bold 9pt/20pt sans-serif;
+    letter-spacing: 1pt;
+    margin-bottom: 3pt;
+    padding: 3pt 3pt 0;
 	text-align:left;
 	font-size:0.7em;
 	font-style:italic;
@@ -113,9 +119,9 @@ section li p{
 ul#skills-ul li:after {
     position: absolute;
     top: 0;
-    right: 5px;
-    line-height: 26px;
-    width: 50px;
+    right: 5pt;
+    line-height: 26pt;
+    width: 50pt;
     text-align: right;
     color: #000;
 }
@@ -149,7 +155,7 @@ li.basic:after {
 }
 
 #awards article{
-	margin:30px 0;
+	margin:30pt 0;
 	text-align:left;
 }
 
