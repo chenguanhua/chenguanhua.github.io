@@ -7,7 +7,7 @@
 
 
 @page {
-  margin: 0.5in;
+  margin: 0.3in 0.5in;
 }
 
 h1 {
@@ -17,7 +17,7 @@ h1 {
 
 h2 {
   font-size: 125%;
-  margin:2% auto;
+  margin:4% auto;
 }
 
 h3 {
@@ -38,6 +38,7 @@ footer{
 
 a[href^="http://"] {
   display: inline;
+  text-decoration:none;
 }
 
 a[href^="http://"]:after { content: " (" attr(href) ") "; }
