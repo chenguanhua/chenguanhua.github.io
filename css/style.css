@@ -1,0 +1,234 @@
+@import url(https://fonts.googleapis.com/css?family=Leckerli+One);
+
+*{
+	margin:0;
+	padding:0;
+}
+
+body{
+	/*background-color:#F0F8FF;*/
+	background-image:url(../img/background.png);
+}
+
+header{
+	text-align:right;
+	text-style:italic;
+	margin:2% auto;
+	width:70%;
+}
+
+header a{
+	color:blue;
+}
+
+header a:hover{
+	color:red;
+}
+
+header h1{
+	font-family:'Leckerli One';
+	font-weight:bold;
+	font-size:2.5em;
+}
+
+nav{
+	font-family:'Leckerli One';
+	font-size:1.5em;
+	height:50px;
+	text-align:center;
+	overflow:auto;
+	margin:5% 0;
+	border-top: 3px double gray;
+	border-bottom: 3px double gray;
+}
+		
+nav ul{
+	list-style:none;
+	padding:0;
+}
+		
+nav ul li{
+	display:inline-block;
+	line-height:50px;
+	margin-left:1%;
+	margin-right:1%;
+}
+		
+nav ul li a{
+	line-height:50px;
+	text-decoration:none;
+	display:inline-block;
+	height:inherit;
+	color:black;
+}
+
+nav ul li a:hover{
+	color:red;
+}
+
+main{
+	margin:2% auto;
+	width:70%;
+}
+
+section{
+	text-align:center;
+	margin:2% auto;
+	padding-bottom:20px;
+}
+
+footer{
+	text-align:center;
+	margin-bottom:30px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+
+h1{
+	font-size:2em;
+	margin:20px 0;
+}
+
+h2{
+	font-family:'Leckerli One';
+	font-size:1.5em;
+	font-weight:bold;
+	background-image:url(../img/tornPaper1.png);
+	background-size:50%;
+	background-repeat: no-repeat;
+    background-position: 50% 50%;
+	padding-top:10%;
+	padding-bottom:10%;
+	color:black;
+}
+
+h3 {
+	font-size:1em;
+    font-weight: bold;
+}
+
+h4{
+	font-size:1em;
+}
+
+h5{
+	font-size:1em;
+	font-style:italic;
+}
+
+section ul{
+	list-style: none;
+    position: relative;
+	margin:0 auto;
+}
+
+section li{
+	margin: 0 0 20px 0;
+    clear: both;
+}
+
+section li div{
+	text-align:left;
+}
+
+section .details{
+	float:left;
+	width:40%;
+	padding-bottom:25px;
+}
+
+section li p{
+	font-style:italic;
+	font-size:1em;
+	text-align:left;
+	float:left;
+	width:60%;
+}
+
+#wrapper {
+	width:60%;
+    margin: 60px auto 30px;
+    padding: 5% 0%;
+    /*background: rgba(248, 236, 194, 0.5);*/
+	background-image:url(../img/paper.png);
+	/*background-size:cover;*/
+    box-shadow: 0 0 10px 3px rgba(0,0,0,.8);
+    position: relative;
+}
+
+#skills-ul {
+    margin: 2% auto;
+    width: 100%;
+    overflow: hidden;
+	list-style:none;
+}
+
+#skills-ul li {
+    position: relative;
+    background-color: rgba(68,68,68,0.02);
+    border-width: 4px;
+    border-style: none outset outset none;
+    color: #000;
+    font: bold 9px/20px sans-serif;
+    letter-spacing: 1px;
+    margin-bottom: 3px;
+    padding: 3px 3px 0;
+	text-align:left;
+	font-size:0.7em;
+	font-style:italic;
+    /*text-transform: uppercase;*/
+    z-index: 1;
+}
+
+#skills-ul li:hover{
+	background-color:rgba(68,68,68,0.2);
+}
+
+ul#skills-ul li:after {
+    position: absolute;
+    top: 0;
+    right: 5px;
+    line-height: 26px;
+    width: 50px;
+    text-align: right;
+    color: #000;
+}
+
+li.proficient{
+	width: 90%;
+}
+
+li.intermediate{
+	width: 60%;
+}
+
+li.basic{
+	width: 30%;
+}
+
+li.proficient:after {
+    content: "90%";
+}
+
+li.intermediate:after {
+    content: "60%";
+}
+
+li.basic:after {
+    content: "30%";
+}
+
+#skills li span{
+	display:inline;
+}
+
+#awards article{
+	margin:30px 0;
+	text-align:left;
+}
+
+#awards p{
+	font-style:italic;
+}
