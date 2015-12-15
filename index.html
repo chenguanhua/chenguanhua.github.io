@@ -168,7 +168,25 @@
 			});
 		  });
 		  
-		 
+		 $('input:file[multiple]').change(
+			function(e){
+				//console.log(e.currentTarget.files);
+				var numFiles = e.currentTarget.files.length;
+					for (i=0;i<numFiles;i++){
+						$('<li />').text(e.currentTarget.files[i].name).appendTo($('#displayFiles'));
+					}
+		  });
+		  
+		  $('.reset').mouseover(function(){
+			$('.resetAlert').show();
+		  });
+		  $('.reset').mouseout(function(){
+			$('.resetAlert').hide();
+		  });
+		  
+		  $('#f4 img').click(function(){
+			test();
+		  });
 		
 	</script>
   </body>

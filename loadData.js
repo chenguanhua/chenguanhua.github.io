@@ -167,56 +167,11 @@
 		return str.substring(0,splitPoint+7)+'"'+subStr+'"}]}';
 	}
 
-$( window ).resize(function() {
-	var cw = $('#introMenu').height();
-	$('#introMenu').css({'width':cw+'px'});
-	$('#introContent').css({'width':$('#intro').width()-cw+'px','left':cw+'px'});
-});	
-
- $('input:file[multiple]').change(
-			function(e){
-				//console.log(e.currentTarget.files);
-				var numFiles = e.currentTarget.files.length;
-					for (i=0;i<numFiles;i++){
-						$('<li />').text(e.currentTarget.files[i].name).appendTo($('#displayFiles'));
-					}
-		  });
-		  
-		  $('.reset').mouseover(function(){
-			$('.resetAlert').show();
-		  });
-		  $('.reset').mouseout(function(){
-			$('.resetAlert').hide();
-		  });
-		  
-		  $('#f4 img').click(function(){
-			test();
-		  });
-		  
-		  var xAngle = 0, yAngle = 0;
-		$('body').keydown(function(evt) {
-			switch(evt.keyCode) {
-				case 37: // left
-					yAngle -= 90;
-					break;
-
-				case 38: // up
-					xAngle += 90;
-					evt.preventDefault();
-					break;
-
-				case 39: // right
-					yAngle += 90;
-					break;
-
-				case 40: // down
-					xAngle -= 90;
-					evt.preventDefault();
-					break;
-			};
-		
-			$('#cube').css('transform','rotateX('+xAngle+'deg) rotateY('+yAngle+'deg)');
-		});
+	$( window ).resize(function() {
+		var cw = $('#introMenu').height();
+		$('#introMenu').css({'width':cw+'px'});
+		$('#introContent').css({'width':$('#intro').width()-cw+'px','left':cw+'px'});
+	});	
 		
 		$('#introMenu').children().hover(function(ev){
 			switch(ev.currentTarget.id) {
