@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Sentiment Analysis</title>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+	<script type="text/javascript" src="sentimentAnalysis.js"></script>
+	<script type="text/javascript" src="sentimentWordsList.js"></script>
+	<script type="text/javascript" src="universal.js"></script>
+	<script type="text/javascript" src="sentiWordNet.js"></script>
+	<script type="text/javascript" src="PorterStemmer2.min.js"></script>
+	<script src="jquery.sidr.js"></script>
+	<link href="style/jquery.sidr.light.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="style/style.js"></script>
+	<link href="style/style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+	<div id="initialMenu" class="demo" onclick="toggleMenu($(this)[0].id);"></div>
+
+	<div id="sidr">
+	<ul>
+		<li><a id="expandedMenu" class="demo" href="#sidr" onclick="toggleMenu($(this)[0].id);">Toogle menu</a></li>
+		<div>
+			<li class="active">
+				<p>Please select the data set you want to analyse and click "Begin Sentiment Analysis" to begin analysis:</p>
+				<select id="selectText">
+				</select>
+				<input type="button" id="sentiAnalysis" value="Begin Sentiment Analysis" onclick="beginSentimentAnalysis();" />
+			</li>
+		</div>
+		<li><a href="#" onclick="backToPanel(true);">Back to Analysis Panel</a></li>
+	</ul>
+	</div>
+  
+	<div id="analysisResult">
+	</div>
+	
+	<div id="chartWrap">
+		<p>Total negative and positive value of the document:</p>
+		<div id="sentimentAnalysis">
+		
+			<div id="totalPosScoreDiv">
+				<span>Pos: </span>
+				<img id="totalPosScore" />
+				<span></span>
+			</div>
+			
+			<br>
+			
+			<div id="totalNegScoreDiv">
+				<span>Neg: </span>
+				<img id="totalNegScore" />
+				<span></span>
+			</div>
+			
+			<br>
+		
+		</div>
+	</div>
+	
+	<div id="dialogoverlay"></div>
+	<div id="dialogbox">
+	  <div>
+		<div id="dialogboxhead"></div>
+		<div id="dialogboxbody"></div>
+		<div id="dialogboxfoot"></div>
+	  </div>
+	</div>
+  </body>
+</html>
+

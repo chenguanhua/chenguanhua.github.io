@@ -1,0 +1,499 @@
+*{
+	margin:0px;
+	padding:0px;
+}
+
+#initialMenu{
+	background-image:url(../pics/menu.png);
+	background-size:contain;
+	background-repeat: no-repeat;
+	height:10%;
+	position:fixed;
+	cursor:pointer;
+	z-index:100000;
+}
+
+#container{
+	position:fixed;
+	perspective: 400px;
+	perspective-origin: 50% 50%;
+	width:100%;
+	height:100%;
+}
+
+#frame{
+	position:absolute;
+	width: 99%;
+	height:99%;
+	top:50%;
+	transform-origin:50% 50%;
+	transform:translateY(-50%);
+	transform-style:preserve-3d;
+}
+		
+#wrap{
+	position:relative;
+	width:90%;
+	height:90%;
+	margin:auto;
+	top:50%;
+	transform:translateY(-50%);
+	transform-style:preserve-3d;
+	transform-origin:50% 50%;
+
+}
+		
+#wrap div{
+	position:absolute;
+	width:48%;
+	height:46%;
+	border:1px solid #000;
+	transform-origin:50% 50%;
+}
+		
+#f1 { 
+	 background:rgba(2,102,200,0.3);
+	 margin-right:2% 1%;
+}
+
+#wrap div .card a{
+	color:white;
+	font-size:3vw;
+	position: relative;
+	top:50%;
+	transform:translateY(-50%);
+	display:block;
+	text-decoration:none;
+}
+
+#wrap div .card{
+    width: 40%;
+    margin: auto;
+	display:block;
+	border:none;
+    position: relative;
+	top:50%;
+	transform:translateY(-50%);
+    perspective: 600px;
+}
+
+#wrap div .card .front{
+	float: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 900;
+    width: 100%;
+    height: auto;
+    border: 1px solid #ccc;
+    background: url("../pics/textMining.png");
+	background-size:contain;
+	background-repeat:repeat;
+    text-align: center;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.9);
+    transform: rotateX(0deg) rotateY(0deg);
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    transition: all 1s ease-in-out;
+}
+
+#wrap div .card.flip .front {
+		z-index: 900;
+		border-color: #eee;
+		box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+		transform: rotateY(180deg);
+}
+
+#wrap div .card.flip .back {
+		z-index: 1000;
+		transform: rotateX(0deg) rotateY(0deg);
+		box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+}
+
+#wrap .card .back{
+	float: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 800;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #ccc;
+    background:rgba(133,133,133,0.3);
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.6);
+    transform: rotateY(-179deg);
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    transition: all 1s ease-in-out;
+	text-align:center;
+}
+
+#f2 { 
+	left:51%;
+	background:rgba(249,1,1,0.3);
+	margin-right:2% 1%;
+}
+#f3 { 
+	top:52.5%;
+	background:rgba(242,181,15,0.3);
+	margin-right:2% 1%;
+}
+#f4 { 	
+	left:51%;
+	top:52.5%;
+	background:rgba(0,147,59,0.3);
+	margin-right:2% 1%;
+	text-align:center;
+}
+
+#f4 img{
+	display: inline-block;
+	width:15%;
+	position:relative;
+	margin:auto;
+	transition: transform .8s ease-in-out;
+	vertical-align: middle;
+	cursor:pointer;
+}
+
+#f4 img:hover{
+	transform:rotate(-360deg);
+}
+
+
+#f4 .helper{
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+#intro{
+	position:absolute;
+	width:45%;
+	height:45%;
+	left:4%;
+	top:3%;
+	background:rgba(133,133,133,0.1);
+}
+
+#intro #introMenu{
+	height:50%;
+	position:relative;
+	top:18%;
+	left:2.5%;
+}
+
+#intro #introMenu div{
+	position:absolute;
+}
+
+#intro #introMenu div:hover{
+	transform:rotate(0deg) scale(1.2);
+	box-shadow:5px 5px 15px #CCC;
+	z-index:2;
+}
+
+#intro #introMenu div:nth-child(1){
+	width:50%;
+	height:50%;
+	background:#B3D1EF;
+	z-index:0;
+}
+
+#intro #introMenu div:nth-child(2){
+	width:50%;
+	height:50%;
+	left:50%;
+	background:#FDB3B3;
+	z-index:3;
+}
+
+#intro #introMenu div:nth-child(3){
+	width:50%;
+	height:50%;
+	left:16.5%;
+	top:-16.5%;
+	background:#FBE9B7;
+	z-index:2;
+}
+
+#intro #introMenu div:nth-child(4){
+	width:50%;
+	height:50%;
+	left:37.5%;
+	top:12.5%;
+	background:#B3DFC4;
+	z-index:4;
+}
+
+#intro #introContent{
+	position:absolute;
+	height:100%;
+	top:0;
+}
+
+#intro #introContent #cont{
+	width:80%;
+	height:80%;
+	margin:auto;
+	position:relative;
+	background:white;
+	top:50%;
+	transform:translateY(-50%);
+	border-radius: 0.5em;
+	overflow:auto;
+}
+
+ #cont h1{
+	text-align:center;
+	margin:5%;
+	padding-top:5%;
+}
+
+#cont a{
+	color:blue;
+}
+
+ #cont p{
+	margin:3%;
+	padding:3%;
+}
+
+#modules{
+	position:absolute;
+	width:45%;
+	height:45%;
+	left:4%;
+	top:50%;
+	background:rgba(133,133,133,0.1);
+}
+
+#modules #showModules{
+	height:100%;
+	width:35%;
+	position:relative;
+	left:65%;
+}
+#modules #fileExplorer{
+	position:absolute;
+	height:100%;
+	width:65%;
+}
+
+#modules #fileExplorer #feCont{
+	width:80%;
+	height:60%;
+	margin:auto;
+	padding:1em 0em 1em 2em;
+	position:relative;
+	background:white;
+	top:50%;
+	transform:translateY(-50%);
+	border-radius: 0.5em;
+	overflow:auto;
+}
+
+#feCont>ul{
+	list-style:none;
+}
+
+#feCont>ul>li:first-child{
+	font-size:20px;
+	font-weight:bold;
+}
+
+#feCont li{
+	padding:0.2em 0;
+}
+
+#showModules{
+	text-align:center;
+}
+
+#showModules img{
+	display: inline-block;
+	width:30%;
+	position:relative;
+	margin:auto;
+	transition: transform .8s ease-in-out;
+	vertical-align: middle;
+	cursor:pointer;
+}
+
+#showModules img:hover{
+	transform:rotate(360deg);
+}
+
+#showModules .helper{
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+#data{
+	position:absolute;
+	width:45%;
+	height:45%;
+	left:50.5%;
+	top:3%;
+	background:rgba(133,133,133,0.1);
+}
+
+#data #tab{
+	position:relative;
+	top: 10%;
+	margin:auto;
+	width:80%;
+}
+
+#data .tabs li {
+	list-style:none;
+	display:inline;
+}
+
+#data .tabs a {
+	padding:5px 10px;
+	display:inline-block;
+	background:#fff;
+	color:rgba(42,58,153,1);
+	text-decoration:none;
+}
+
+#data .tabs a.active {
+	background:#009ACA;
+	color:#fff;
+}
+
+#data #tab1,#tab2{
+	background:#009ACA;
+	color:#fff;
+}
+
+#data p{
+	color:#B4E1D5;
+	padding:25px 10px;
+}
+
+#data button{
+	margin:25px 10px;
+	padding:10px;
+	background:#00C1FD;
+	color:#fff;
+	border:none;
+	border-radius:0.5em;
+}
+
+#data button:hover{
+	background:#00B3EB;
+	cursor:pointer;
+}
+
+#data input{
+	padding:10px;
+}
+
+#data .reset{
+	background:#ccc;
+	color:#fff;
+}
+
+#data .reset:hover{
+	background:#bbb;
+}
+
+#data .resetAlert{
+	display:none;
+	padding:0px 0px 5px 10px;
+}
+
+#tab2 ul{
+	padding:10px;
+}
+	
+#textInput{
+	display:block;
+	margin:auto;
+	width:90%;
+	border-radius:0.5em;
+}
+
+#beginCount{
+	display:block;
+}
+
+#wordCount{
+	border:1px solid #000;
+	height:200px;
+	width:200px;
+	overflow:scroll;
+	display:inline-block;
+}
+
+#wordle{
+	display:inline-block;
+}
+
+#wordle3d{
+	width:100%;
+	margin:auto;
+	
+}
+
+#wordle3d #container{
+	perspective: 1000px;
+	perspective-origin: 50% 50%;
+	transform-style:preserve-3d;
+	width:100%;
+	height:100%;
+}
+		
+#wordle3d #container div{position:absolute;}
+
+#dialogoverlay{
+	display: none;
+	opacity: .8;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	background: #FFF;
+	width: 100%;
+	z-index: 10;
+}
+
+#dialogbox{
+	display: none;
+	position: fixed;
+	background: #000;
+	border-radius:7px; 
+	width:550px;
+	z-index: 10;
+}
+#dialogbox > div{ background:#FFF; margin:8px; }
+#dialogbox > div > #dialogboxhead{ background: #666; font-size:19px; height:40px; color:#CCC; }
+#dialogbox > div > #dialogboxbody{ background:#333; padding:20px; color:#FFF; }
+#dialogbox > div > #dialogboxfoot{ background: #666; padding:10px; text-align:right; }
+
+#chartWrap{
+	position:relative;
+	left:5%;
+}
+
+#chartWrap p{
+	margin-bottom:20px;
+}
+
+#chart{
+	position:relative;
+	left:5%;
+	width:70%;
+}
+
+#totalPosScore{
+	height:15px; 
+	border:1px;
+}
+
+#totalNegScore{
+	height:15px; 
+	border:1px;
+}

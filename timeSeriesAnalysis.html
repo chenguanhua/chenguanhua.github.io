@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Time Series Analysis</title>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+	<script type="text/javascript" src="universal.js"></script>
+	<script type="text/javascript" src="timeSeriesAnalysis.js"></script>
+	<script type="text/javascript" src="PorterStemmer2.min.js"></script>
+	<script type="text/javascript" src="style/style.js"></script>
+	<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+	<script src="c3.min.js"></script>
+	<link href="style/c3.css" rel="stylesheet" type="text/css">
+	<script src="jquery.sidr.js"></script>
+	<link href="style/jquery.sidr.light.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="style/style.js"></script>
+	<link href="style/style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+  
+	<div id="initialMenu" class="demo" onclick="toggleMenu($(this)[0].id);"></div>
+
+	<div id="sidr">
+	<ul>
+		<li><a id="expandedMenu" class="demo" href="#sidr" onclick="toggleMenu($(this)[0].id);">Toogle menu</a></li>
+		<div>
+			<li class="active">
+				<p>Please select the data set you want to analyse and click "Begin Analysis" to do analysis, you will be asked to input time interval (in minutes) before actual calculation. Please note that you need to load time series data in an appropriate format in order to see the result, otherwise system will output nothing.</p>
+				<select id="selectText">
+				</select>
+				<input type="button" id="timeSeriesAnalysis" value="Begin Analysis" onclick="beginTimeSeriesAnalysis();" />
+			</li>
+		</div>
+		<li><a href="#" onclick="backToPanel(true);">Back to Analysis Panel</a></li>
+	</ul>
+	</div>
+	
+	<div id="chart"></div>
+
+  </body>
+</html>
+

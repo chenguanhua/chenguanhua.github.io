@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Word Count</title>
+	<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+	<script type="text/javascript" src="naiveBayes.js"></script>
+	<script type="text/javascript" src="wordCount.js"></script>
+	<script type="text/javascript" src="universal.js"></script>
+	<script type="text/javascript" src="PorterStemmer2.min.js"></script>
+	<script type="text/javascript" src="style/style.js"></script>
+	<script src="jquery.sidr.js"></script>
+	<link href="style/jquery.sidr.light.css" rel="stylesheet" type="text/css">
+	<link href="style/style.css" rel="stylesheet" />
+
+	<style>
+		
+	</style>
+  </head>
+
+  <body>
+	<div id="initialMenu" class="demo" onclick="toggleMenu($(this)[0].id);"></div>
+	<div id="sidr">
+	<ul>
+		<li><a id="expandedMenu" class="demo" href="#sidr" onclick="toggleMenu($(this)[0].id);">Toogle menu</a></li>
+		<div>
+			<li class="active">
+				<p>Please select the data set you want to analyse:</p>
+				<select id="selectText">
+				</select>
+			</li>
+			<li>
+				<p>Please click "Begin Count" to generate word frequency list and wordle:</p>
+				<input type="button" id="beginCount" value="Begin Count" onclick="beginCount();" />
+			</li>
+			<li>
+				<p>Please click "Begin Testing" to generate similarity results of the testing set and the training set using naive Bayes classification:</p>
+				<input type="button" id="beginTesting" value="Begin Testing" onclick="beginTesting();" />
+			</li>
+		</div>
+		<li><a href="#" onclick="backToPanel(true);">Back to Analysis Panel</a></li>
+	</ul>
+	</div>
+	
+	<div id="wordCount">
+	</div>
+	<canvas id="wordle">
+	</canvas>
+	
+	<div id="wordle3d">
+		<div id="container">
+		</div>
+	</div>
+	
+	<div id="dialogoverlay"></div>
+	<div id="dialogbox">
+	  <div>
+		<div id="dialogboxhead"></div>
+		<div id="dialogboxbody"></div>
+		<div id="dialogboxfoot"></div>
+	  </div>
+	</div>
+
+  </body>
+</html>
+

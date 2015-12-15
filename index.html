@@ -1,12 +1,177 @@
-<DOCTYPE! html>
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-    <title>Test</title>
+    <meta charset="UTF-8" />
+    <title>VPA - Text Analysis</title>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+	<script type="text/javascript" src="loadData.js"></script>
+	<script type="text/javascript" src="universal.js"></script>
+	<script type="text/javascript" src="naiveBayes.js"></script>
+	<script type="text/javascript" src="PorterStemmer2.min.js"></script>
+	<script type="text/javascript" src="style/style.js"></script>
+	<link href="style/style.css" rel="stylesheet" />
   </head>
+
   <body>
-    <h1>Guanhua Chen</h1>
-    <p>2nd year doctoral student at UM and this is my web page</p>
-    <img src="octocat.png" alt="octocat"/>
+		<div id="container"> 
+		  <div id="wrap">
+			<div id="f1">
+				<div id="wcCard" class="card hover">
+					<img class="front" src="pics/textMining.png" alt="Card Front" />
+					<div class="back">
+						<a href="wordCount.html" onclick="loadDataToPage();">Words Analysis</a>
+					</div>
+				</div>
+			</div>
+			<div id="f2">
+				<div id="saCard" class="card hover">
+					<img class="front" src="pics/sentiment.png" alt="Card Front"/>
+					<div class="back">
+						<a href="sentimentAnalysis.html" onclick="loadDataToPage();">Sentiment Analysis</a>
+					</div>
+				</div>
+			</div>
+			<div id="f3">
+				<div id="tsaCard" class="card hover">
+					<img class="front" src="pics/timeSeries.png" alt="Card Front"/>
+					<div class="back">
+						<a href="timeSeriesAnalysis.html" onclick="loadDataToPage();">Time-series Analysis</a>
+					</div>
+				</div>
+			</div>
+			<div id="f4">
+				<span class="helper"></span>
+				<img src="pics/goback.png" alt="Go Back"/>
+			</div>
+		  </div>
+		  
+		  <div id="frame">
+			  <div id="intro">
+				<div id="introMenu">
+					<div id="projectIntro"></div>
+					<div id="modulesIntro"></div>
+					<div id="processIntro"></div>
+					<div id="developerIntro"></div>
+				</div>
+				<div id="introContent">
+					<div id="cont">
+						<h1>Introduction</h1>
+						<p>
+							This website is a project aiming at text data mining. On this website, 
+							you can generate word frequency list and interactive wordle, do classification, explore
+							sentiments, and implement time-series analysis of your own text data.
+						</p>
+						<p>
+							This website is developed by <a href="http://ghchen.com">Guanhua Chen</a> | <a href="http://chenguanhua.github.io/resume.html">CV</a>.
+						</p>
+					</div>
+				</div>
+			  </div>
+
+			  <div id="data">
+			    <div id="tab">
+				  <ul class='tabs'>
+					<li><a href='#tab1'>Copy and Paste Text</a></li>
+					<li><a href='#tab2'>Load JSON Files</a></li>
+				  </ul>
+				  <div id='tab1'>
+					<p>Please paste your text in the area below:</p>
+					<textarea cols="50" rows="5" id="textInput" name="Text Input"></textarea>
+					<button class="beginLearning" onclick="beginLearning();">Begin Learning</button>
+					<button class="reset" onclick="resetData();">Reset Data</button>
+					<p class="resetAlert">Caution: by clicking this button you'll reset all the data input before.</p>
+				  </div>
+				  <div id='tab2'>
+					<p>Please load your JSON files below:</p>
+					<input type="file" id="invisible_file_dialog" accept=".json" onclick="this.value=null;" onchange="openFile(event)" multiple />
+					<p>Files to archive:</p>
+					<ul id="displayFiles">
+					</ul>
+					<button class="beginLearning" onclick="beginLearning();">Begin Learning</button>
+					<button class="reset" onclick="resetData();">Reset Data</button>
+					<p class="resetAlert">Caution: by clicking this button you'll reset all the data input before.</p>
+				  </div>
+				</div>
+			  </div>
+			  
+			  <div id="modules">
+				<div id="fileExplorer">
+					<div id="feCont">
+						<ul>
+							<li>Training docs:</li>
+							<li>
+								<ul id="trainingDocs">
+									<li>No testing files exist!</li>
+								</ul>
+							</li>
+						</ul>
+						<ul>
+							<li>Testing docs:</li>
+							<li>
+								<ul id="testingDocs">
+									<li>No testing files exist!</li>
+								</ul>
+							</li>
+						</ul>						
+					</div>
+				</div>
+				<div id="showModules">
+					<span class="helper"></span>
+					<img src="pics/goforward.png" onclick="test();" alt="Go To Modules"/>
+				</div>
+			  </div>
+		  </div>
+		  
+		</div>
+		
+		
+
+	
+	<script>
+		
+		
+	
+		 $('ul.tabs').each(function(){
+			// For each set of tabs, we want to keep track of
+			// which tab is active and it's associated content
+			var $active, $content, $links = $(this).find('a');
+
+			// If the location.hash matches one of the links, use that as the active tab.
+			// If no match is found, use the first link as the initial active tab.
+			$active = $($links[0] || $links.filter('[href="'+location.hash+'"]')[0]);
+			$active.addClass('active');
+
+			$content = $($active[0].hash);
+
+			// Hide the remaining content
+			$links.not($active).each(function () {
+			  $(this.hash).hide();
+			});
+
+			// Bind the click event handler
+			$(this).on('click', 'a', function(e){		
+			  // Make the old tab inactive.
+			  $active.removeClass('active');
+			  $content.hide();
+
+			  // Update the variables with the new link and content
+			  $active = $(this);
+			  $content = $(this.hash);
+
+			  // Make the tab active.
+			  $active.addClass('active');
+			  $content.fadeIn(500);
+
+			  // Prevent the anchor's default click action
+			  e.preventDefault();
+			});
+		  });
+		  
+		 
+		
+	</script>
   </body>
 </html>
+
+
