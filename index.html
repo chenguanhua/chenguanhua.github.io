@@ -188,6 +188,63 @@
 			test();
 		  });
 		
+		$( window ).resize(function() {
+		var cw = $('#introMenu').height();
+		$('#introMenu').css({'width':cw+'px'});
+		$('#introContent').css({'width':$('#intro').width()-cw+'px','left':cw+'px'});
+	});	
+		
+		$('#introMenu').children().hover(function(ev){
+			switch(ev.currentTarget.id) {
+				case "projectIntro":
+					$('#cont').html('<p>In the "Word Analysis" module, you can generate an interactive '+
+									'wordle with word frequencies of your input text and classify your '+
+									'testing document based on naive Bayes method.<p>')
+							  .css({'color':'rgb(2,102,200)'});
+					$('#wcCard').addClass("flip");
+					$('#cont p').css({'margin':'3%','padding':'3%'});
+					break;
+				case "modulesIntro":
+					$('#cont').html('<p>In the "Sentiment Analysis" module, you can calculate the weighted average '+
+									'sentiment score of your input text based on a word list with affective ratings '+
+									'developed by <a href="http://crr.ugent.be/archives/1003">Warriner et al.</a> '+
+									'as well as the total negative and positive ratings of the same document based on '+
+									'the <a href="http://sentiwordnet.isti.cnr.it">sentiWordNet</a> list.<p>')
+							  .css({'color':'rgb(249,1,1)'});
+					$('#cont a').css({'color':'blue'});
+					$('#cont p').css({'margin':'3%','padding':'3%'});
+					$('#saCard').addClass("flip");
+					break;
+				case "processIntro":
+					$('#cont').html('<p>In the "Time-series Analysis" module, you can generate a time-series '+
+									'graph of the total word count of each specified time interval. '+
+									'Please note that you need to load JSON files with appropriate timestamp '+
+									'format in order to do the analysis.<p>')
+							  .css({'color':'rgb(242,181,15)'});
+					$('#cont p').css({'margin':'3%','padding':'3%'});
+					$('#tsaCard').addClass("flip");
+					break;
+				case "developerIntro":
+					$('#cont').html("<h1>Introduction</h1>"+
+									"<p>This website is a project aiming at text data mining. On this website, "+ 
+									"you can generate word frequency list and interactive wordle, do classification, explore "+
+									"sentiments, and implement time-series analysis of your own text data.</p>"+
+									"<p>This website is developed by <a href='http://ghchen.com'>Guanhua Chen</a>.</p>")
+							.css({'color':'black'});
+					$('#cont a').css({'color':'blue'});
+					$('#cont p').css({'margin':'3%','padding':'3%'});
+					break;
+				default:
+					break;
+			}
+		},function(){
+			/*$('#cont').html("<h1>Introduction</h1>"+
+							"<p>This website is a project aiming at text data mining. On this website, "+ 
+							"you can generate word frequency list and interactive wordle, do classification, explore "+
+							"sentiments, and implement time-series analysis of your own text data.</p>")
+					  .css({'color':'black'});*/
+			$('.card').removeClass("flip");
+		});
 	</script>
   </body>
 </html>
